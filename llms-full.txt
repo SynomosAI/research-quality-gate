@@ -1,0 +1,57 @@
+# research-quality-gate — 完整文本
+
+本文件为 llms.txt 标准的「完整版」，供长上下文模型一次性读取本仓库的完整说明。
+
+## 这是什么
+
+`research-quality-gate`（研究质量闸门）是一个 Agent Skill 发布包，给调研 / 情报产物做质量门禁：6 格证据卡合理性检查、5 维 LLM-as-Judge 评分（含原子声明拆解与偏见控制），并规定多 Agent 专家团协作范式。v1.3 起嵌入 PDCA（Plan-Do-Check-Act）国际质量循环，与 ISO 9001 / 14001 / 27001 / 17025 同构。
+
+一句话：调研报告的 Check + Act 落地——先锁范围，再过证据卡，再评 5 维。
+
+## 解决什么问题
+
+1. 调研报告产出后需要一份可复现的质量自检。
+2. 多 Agent 调研团队容易犯「先互相锚定、共享误念、聚合掩盖失败维度」等错误。
+3. 需要把主观评分与国际方法学（GRADE / FActScore / G-Eval）对齐。
+4. 需要复现性阈值（跨 judge κ）来判断评分是否可信。
+
+## PDCA 顶层框架
+
+- Plan：写 Research Brief（子问题 / 假设 / 范围边界 / 成功标准：5 维≥0.7、ISO 5725 R&R α≥0.6、跨 judge κ≥0.4）。
+- Do：三路独立并行检索 + 交叉验证 + 溯源包采集（url / source_type / snippet / date / doi）。
+- Check：本门禁——先范围边界核对，再 6 格证据卡 + 5 维评分。
+- Act：通过则固化为 SOP；未过回 Plan；遗留进下一轮。
+
+## 6 格证据卡
+
+证据等级（GRADE）、可能性词（ICD 203 七档）、来源摘要（SIFT）、备选假设（三角验证）、与上次判断异同、溯源包（URL+时间+快照）。缺任一格 = 不合理。
+
+## 5 维 LLM-as-Judge
+
+事实准确（FActScore 原子声明拆解）、引用精确（NLI）、完整性、来源质量、工具效率。偏见控制：维度随机化、跨模型裁判、独立打分不聚合。
+
+## 多 Agent 协作 7 规范
+
+先独立并行后投票；辩论只作定向干预；异构化；共享完整执行轨迹；统一术语与概率词表；inception 式交接；独立验证者贯穿不兼写结论。
+
+## 快速开始
+
+```bash
+git clone https://github.com/SynomosAI/research-quality-gate.git
+cd research-quality-gate
+cat SKILL.md
+cat calibration-log.md
+```
+
+## 触发词
+
+调研质量门禁 / 报告合理性检查 / 6 格证据卡 / 专家团协作规范 / 调研质量尺 / 国际验证法 / ISO 5725 稳定性 / PDCA 调研框架。
+
+## 许可与权利
+
+MIT 许可（见 LICENSE.md）。版权：© 2026 注册老炮@MedXpert。
+
+## 链接
+
+- 仓库: https://github.com/SynomosAI/research-quality-gate
+- 生态全景: https://github.com/SynomosAI/synomosai-skills
