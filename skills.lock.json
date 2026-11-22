@@ -1,0 +1,23 @@
+{
+  "algorithm": "sha256(sorted relpath + NUL + file sha256, per line)",
+  "history": [
+    {
+      "root_digest": "8ba75f0316165d410504384e72cc5add69857dfd3795353e8c3c795af6197d81",
+      "sequence": 1
+    }
+  ],
+  "root_digest": "8ba75f0316165d410504384e72cc5add69857dfd3795353e8c3c795af6197d81",
+  "schema_version": 2,
+  "sequence": 1,
+  "skill_count": 1,
+  "skills": [
+    {
+      "declared_name": "research-quality-gate",
+      "digest": "cdd88b92d1dd39c685c9edf9b2ce4a7506c472444024bf03018892c51b3d2386",
+      "file_count": 1,
+      "has_description": true,
+      "path": "."
+    }
+  ],
+  "validated_against": []
+}
